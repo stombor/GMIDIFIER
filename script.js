@@ -5,9 +5,10 @@ Used Plugins/Libraries:
     - jsmidgen (jsMidi Utility)
     - download (Download Utility)
  */
-let areChords = false;
-let qualityNR = -1;
-let preset = false;
+window.areChords = false;
+window.window.qualityNR = -1;
+window.preset = false;
+
 
 
 
@@ -19,8 +20,8 @@ function createMidi(){
     let amount = v.count(numberSequence);
     let scale = v.slice(numberSequence,0,5);
     let baseNote = Math.round((parseInt(v.slice(scale,0,3),4)/4) + 36) + parseInt(document.getElementById("transposeKey").value,10);
-    let scaleQuality = qualityNR ;
-    if(qualityNR === -1){
+    let scaleQuality = window.qualityNR ;
+    if(window.qualityNR === -1){
         scaleQuality = Math.round(parseInt(v.slice(scale,3,5),4)/2);
     }
     let notes = [];
@@ -54,7 +55,7 @@ function createMidi(){
     let bpm = parseInt(document.getElementById("bpm").value,10);
     if(document.getElementById("bpm").value == '') bpm=parseInt(v.slice(scale,0,3),4);
     track.setTempo(parseInt(v.slice(scale,0,3),4));
-    let singlenote = !areChords;
+    let singlenote = !window-areChords;
     let chordamount = parseInt(document.getElementById("chordAmount").value,10);
     let stepLength = parseInt(document.getElementById("stepLength").value,10);
     if(document.getElementById("stepLength").value == '') stepLength=128;
@@ -318,20 +319,20 @@ function playGenomeold(){
 function clickChords(){
     if(document.getElementById("chordsButton").classList.contains('active')){
         document.getElementById("chordsButton").classList.remove('active');
-        areChords = false;
+        window.areChords = false;
     }else{
         document.getElementById("chordsButton").classList.add('active');
-        areChords = true;
+        window.areChords = true;
     }
 }
 
 function clickIonian(){
     if(document.getElementById("ionianButton").classList.contains('active')){
         document.getElementById("ionianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("ionianButton").classList.add('active');
-        qualityNR = 0;
+        window.qualityNR = 0;
     }
 
     if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -345,10 +346,10 @@ function clickIonian(){
 function clickDorian(){
     if(document.getElementById("dorianButton").classList.contains('active')){
         document.getElementById("dorianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("dorianButton").classList.add('active');
-        qualityNR = 1;
+        window.qualityNR = 1;
     }
     if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if(document.getElementById("phrygianButton").classList.contains('active')) document.getElementById("phrygianButton").classList.remove('active');
@@ -361,10 +362,10 @@ function clickDorian(){
 function clickPhyrigian(){
     if(document.getElementById("phrygianButton").classList.contains('active')){
         document.getElementById("phrygianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("phrygianButton").classList.add('active');
-        qualityNR = 2;
+        window.qualityNR = 2;
     }
     if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -377,10 +378,10 @@ function clickPhyrigian(){
 function clickLydian(){
     if(document.getElementById("lydianButton").classList.contains('active')){
         document.getElementById("lydianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("lydianButton").classList.add('active');
-        qualityNR = 3;
+        window.qualityNR = 3;
     }
     if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -393,10 +394,10 @@ function clickLydian(){
 function clickMixolydian() {
     if (document.getElementById("mixolydianButton").classList.contains('active')) {
         document.getElementById("mixolydianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     } else {
         document.getElementById("mixolydianButton").classList.add('active');
-        qualityNR = 4;
+        window.qualityNR = 4;
     }
     if (document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if (document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -408,10 +409,10 @@ function clickMixolydian() {
 function clickAeolian(){
     if(document.getElementById("aeolianButton").classList.contains('active')){
         document.getElementById("aeolianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("aeolianButton").classList.add('active');
-        qualityNR = 4;
+        window.qualityNR = 4;
     }
     if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -423,10 +424,10 @@ function clickAeolian(){
 function clickLocrian(){
     if(document.getElementById("locrianButton").classList.contains('active')){
         document.getElementById("locrianButton").classList.remove('active');
-        qualityNR = -1;
+        window.qualityNR = -1;
     }else{
         document.getElementById("locrianButton").classList.add('active');
-        qualityNR = 4;
+        window.qualityNR = 4;
     }
     if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
     if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
@@ -437,14 +438,14 @@ function clickLocrian(){
 }
 
 function clickPreset(){
-    if(!preset){
+    if(!window.preset){
         document.getElementById("genome").value = 'GGGAGGCCCACGTATGGCGCCTCTCCAAAGGCTGCAGAAGTTTCTTGCTAACAAAAAGTCCGCACATTCGAGCAAAGACAGGCTTTAGCGAGTTATTAAAAACTTAGGGGCGCTCTTGTCCCCCACAGGGCCCGACCGCACACAGCAAGGCGATGGCCCAGCTGTAAGTTGGTAGCACTGAGAACTAGCAGCGCGCGCGGAGCCCGCTGAGACTTGAATCAATCTGGTCTAACGGTTTCCCCTAAACCGCTAGGAGCCCTCAATCGGCGGGACAGCAGGGCGCGTCCTCTGCCACTCTCGCTCCGAGGTCCCCGCGCCAGAGACGCAGCCGCGCTCCCACCACCCACACCCACCGCGCCCTCGTTCGCCTCTTCTCCGGGAGCCAGTCCGCGCCACCGCCGCCGCCCAGGCCATCGCCACCCTCCGCAGCCATGTCCACCAGGTCCGTGTCCTCGTCCTCCTACCGCAGGATGTTCGGCGGCCCGGGCACCGCGAGCCGGCCGAGCTCCAGCCGGAGCTACGTGACTACGTCCACCCGCACCTACAGCCTGGGCAGCGCGCTGCGCCCCAGCACCAGCCGCAGCCTCTACGCCTCGTCCCCGGGCGGCGTGTATGCCACGCGCTCCTCTGCCGTGCGCCTGCGGAGCAGCGTGCCCGGGGTGCGGCTCCTGCAGGACTCGGTGGACTTCTCGCTGGCCGACGCCATCAACACCGAGTTCAAGAACACCCGCACCAACGAGAAGGTGGAGCTGCAGGAGCTGAATGACCGCTTCGCCAACTACATCGACAAGGTGCGCTTCCTGGAGCAGCAGAATAAGATCCTGCTGGCCGAGCTCGAGCAGCTCAAGGGCCAAGGCAAGTCGCGCCTGGGGGACCTCTACGAGGAGGAGATGCGGGAGCTGCGCCGGCAGGTGGACCAGCTAACCAACGACAAAGCCCGCGTCGAGGTGGAGCGCGACAACCTGGCCGAGGACATCATGCGCCTCCGGGAGAAATTGCAGGAGGAGATGCTTCAGAGAGAGGAAGCCGAAAACACCCTGCAATCTTTCAGACAGGATGTTGACAATGCGTCTCTGGCACGTCTTGACCTTGAACGCAAAGTGGAATCTTTGCAAGAAGAGATTGCCTTTTTGAAGAAACTCCACGAAGAGGAAATCCAGGAGCTGCAGGCTCAGATTCAGGAACAGCATGTCCAAATCGATGTGGATGTTTCCAAGCCTGACCTCACGGCTGCCCTGCGTGACGTACGTCAGCAATATGAAAGTGTGGCTGCCAAGAACCTGCAGGAGGCAGAAGAATGGTACAAATCCAAGTTTGCTGACCTCTCTGAGGCTGCCAACCGGAACAATGACGCCCTGCGCCAGGCAAAGCAGGAGTCCACTGAGTACCGGAGACAGGTGCAGTCCCTCACCTGTGAAGTGGATGCCCTTAAAGGAACCAATGAGTCCCTGGAACGCCAGATGCGTGAAATGGAAGAGAACTTTGCCGTTGAAGCTGCTAACTACCAAGACACTATTGGCCGCCTGCAGGATGAGATTCAGAATATGAAGGAGGAAATGGCTCGTCACCTTCGTGAATACCAAGACCTGCTCAATGTTAAGATGGCCCTTGACATTATTGCCACCTACAGGAAGCTGCTGGAAGGCGAGGAGAGCAGGATTTCTCTGCCTCTTCCAAACTTTTCCTCCCTGAACCTGAGGGAAACTAATCTGGATTCACTCCCTCTGGTTGATACCCACTCAAAAAGGACACTTCTGATTAAGACGGTTGAAACTAGAGATGGACAGGTTATCAACGAAACTTCTCAGCATCACGATGACCTTGAATAAAAATTGCACACACTCAGTGCAGCAATATATTACCAGCAAGAATAAAAAAGAAATCCATATCTTAAAGAAACAGCTTTCAAGTGCCTTTCTGCAGTTTTTCAGGAGCGCAAGATAGATTTGGAATAGGAATAAGCTCTAGTTCTTAACAACCGACACTCCTACAAGATTTAGAAAAAAGTTTACAACATAATCTAGTTTACAGAAAAATCTTGTGCTAGAATACTTTTTAAAAGGTATTTTGAATACCATTAAAACTGCTTTTTTTTTTCCAGCAAGTATCCAACCAACTTGGTTCTGCTTCAATAAATCTTTGGAAAAACTC';
         document.getElementById("transposeKey").value = 0;
         document.getElementById("chordAmount").value = 4;
         document.getElementById("stepLength").value = 32;
         document.getElementById("bpm").value = 80;
 
-        qualityNR = -1;
+        window.qualityNR = -1;
         if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
         if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
         if(document.getElementById("phrygianButton").classList.contains('active')) document.getElementById("phrygianButton").classList.remove('active');
@@ -453,11 +454,11 @@ function clickPreset(){
         if(document.getElementById("aeolianButton").classList.contains('active')) document.getElementById("aeolianButton").classList.remove('active');
         if(document.getElementById("locrianButton").classList.contains('active')) document.getElementById("locrianButton").classList.remove('active');
 
-        areChords = true;
+        window.areChords = true;
         if(!document.getElementById("chordsButton").classList.contains('active')){
             document.getElementById("chordsButton").classList.add('active');
         }
-        preset = true;
+        window.preset = true;
     }else{
         document.getElementById("genome").value = '';
         document.getElementById("transposeKey").value = 0;
@@ -465,7 +466,7 @@ function clickPreset(){
         document.getElementById("stepLength").value = '';
         document.getElementById("bpm").value = '';
 
-        qualityNR = -1;
+        window.qualityNR = -1;
         if(document.getElementById("ionianButton").classList.contains('active')) document.getElementById("ionianButton").classList.remove('active');
         if(document.getElementById("dorianButton").classList.contains('active')) document.getElementById("dorianButton").classList.remove('active');
         if(document.getElementById("phrygianButton").classList.contains('active')) document.getElementById("phrygianButton").classList.remove('active');
@@ -474,9 +475,9 @@ function clickPreset(){
         if(document.getElementById("aeolianButton").classList.contains('active')) document.getElementById("aeolianButton").classList.remove('active');
         if(document.getElementById("locrianButton").classList.contains('active')) document.getElementById("locrianButton").classList.remove('active');
 
-        areChords = false;
+        window.areChords = false;
         if(document.getElementById("chordsButton").classList.contains('active')) document.getElementById("chordsButton").classList.remove('active');
-        preset = false;
+        window.preset = false;
     }
 
 
