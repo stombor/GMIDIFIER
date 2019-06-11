@@ -23,7 +23,6 @@ function createMidi(){
     if(qualityNR === -1){
         scaleQuality = Math.round(parseInt(v.slice(scale,3,5),4)/2);
     }
-    alert(baseNote+" "+scaleQuality);
     let notes = [];
     let scaleTonalSteps = [0,2,4,5,7,9,11,12,14,16,17,19,21,23,24,26]; //IONIAN
     switch(scaleQuality){
