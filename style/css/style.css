@@ -1,0 +1,227 @@
+/* Every position oriented definition is in this file
+ * This includes:
+ *      - SIZE
+ *      - PADDING, MARGIN
+ *      - TEXT ALIGN
+ *      - FLEX BOXES and OTHER CONTAINERS */
+body {
+  height: 100vh;
+  overflow: hidden; }
+
+.mainContainer {
+  width: 1200px;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.horizontalContainer {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.verticalContainer {
+  height: 700px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.chordsContainer {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.qualityFirstRow {
+  width: 300px;
+  height: 75px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center; }
+
+.qualitySecondRow {
+  width: 450px;
+  height: 75px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center; }
+
+.qualityButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px; }
+
+.inputWindow .inputTitle {
+  padding: 10px;
+  text-align: center; }
+.inputWindow .inputSection {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; }
+
+.textLarge {
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 13px; }
+
+.button {
+  width: 240px;
+  height: 75px; }
+
+#bpmInputWindow, #durationInputWindow {
+  width: 105px; }
+  #bpmInputWindow .inputSection, #durationInputWindow .inputSection {
+    height: 25px;
+    width: 80px; }
+
+#geneInputWindow {
+  height: 490px; }
+  #geneInputWindow .inputSection {
+    height: 430px;
+    width: 460px; }
+
+#chordNotesInputWindow, #rootTransInputWindow {
+  height: 200px; }
+  #chordNotesInputWindow .inputSection, #rootTransInputWindow .inputSection {
+    height: 140px;
+    width: 620px; }
+
+#qualityInputWindow {
+  height: 230px; }
+  #qualityInputWindow .inputSection {
+    height: 170px;
+    width: 620px; }
+
+.inputSlider {
+  width: 400px;
+  margin: 0 auto;
+  background: #256868; }
+
+.inputSlider#chordAmount {
+  width: 310px; }
+
+.inputSlider::-webkit-slider-runnable-track {
+  background-color: #f1eccf;
+  height: 40px; }
+.inputSlider::-moz-range-track {
+  background-color: #f1eccf;
+  height: 40px; }
+.inputSlider::-ms-track {
+  background-color: #f1eccf;
+  height: 40px; }
+.inputSlider::-webkit-slider-thumb {
+  height: 80px; }
+.inputSlider::-moz-range-thumb {
+  height: 80px; }
+.inputSlider::-ms-thumb {
+  height: 80px; }
+
+textarea {
+  height: 410px;
+  width: 440px;
+  padding: 10px;
+  margin: 0; }
+
+input[type='text'] {
+  width: 100%;
+  height: 100%;
+  background: none;
+  text-align: center; }
+
+/* Every look oriented definition is in this file
+ * This includes:
+ *      - COLORS
+ *      - FONTS
+ *      - BORDERS */
+body {
+  background-color: #f1eccf;
+  color: #256868;
+  font-family: "VT323", monospace;
+  font-size: 18px; }
+
+input {
+  color: #256868;
+  font-family: "VT323", monospace; }
+
+.textLarge {
+  background-color: #ec8f6c;
+  font-size: 4em;
+  border-radius: 3px; }
+
+.inputWindow {
+  background-color: #a9b08f;
+  border-radius: 3px; }
+  .inputWindow .inputTitle {
+    border-radius: 3px; }
+  .inputWindow .inputSection {
+    background-color: #256868;
+    color: #a9b08f; }
+
+.button {
+  background-color: #ec8f6c;
+  font-size: 2em;
+  border: #256868 solid 5px;
+  border-radius: 3px; }
+
+.qualityButton {
+  border: none;
+  background-color: #a9b08f; }
+
+.qualityButton:active, .qualityButton.active {
+  background-color: #ec8f6c; }
+
+.inputSlider::-webkit-slider-runnable-track {
+  background-color: #f1eccf;
+  border: none; }
+.inputSlider::-moz-range-track {
+  background-color: #f1eccf;
+  border: none; }
+.inputSlider::-ms-track {
+  background-color: #f1eccf;
+  border: none; }
+.inputSlider::-webkit-slider-thumb {
+  background-color: #ec8f6c;
+  border: #256868 solid 10px;
+  border-radius: 3px; }
+.inputSlider::-moz-range-thumb {
+  background-color: #ec8f6c;
+  border: #256868 solid 10px;
+  border-radius: 3px; }
+.inputSlider::-ms-thumb {
+  background-color: #ec8f6c;
+  border: #256868 solid 10px;
+  border-radius: 3px; }
+
+textarea {
+  font-family: "VT323", monospace;
+  color: #a9b08f;
+  border: none;
+  background: none; }
+
+input[type='text'] {
+  color: #a9b08f;
+  border: none;
+  background: none; }
+
+/* Every animation oriented definition is in this file */
+
+/*# sourceMappingURL=style.css.map */

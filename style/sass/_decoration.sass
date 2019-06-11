@@ -1,0 +1,82 @@
+/* Every look oriented definition is in this file
+ * This includes:
+ *      - COLORS
+ *      - FONTS
+ *      - BORDERS
+body
+  background-color: #f1eccf
+  color: #256868
+  font-family: 'VT323', monospace
+  font-size: 18px
+
+input
+  color: #256868
+  font-family: 'VT323', monospace
+
+.textLarge
+  background-color: #ec8f6c
+  font-size: 4em
+  border-radius: 3px
+
+
+.inputWindow
+  background-color: #a9b08f
+  border-radius: 3px
+  .inputTitle
+    border-radius: 3px
+  .inputSection
+    background-color: #256868
+    color: #a9b08f
+
+
+.button
+  background-color: #ec8f6c
+  font-size: 2em
+  border: #256868 solid 5px
+  border-radius: 3px
+
+
+
+.qualityButton
+  border: none
+  background-color: #a9b08f
+
+.qualityButton:active, .qualityButton.active
+    background-color: #ec8f6c
+
+
+
+@mixin track()
+  background-color: #f1eccf
+  border: none
+@mixin cursor()
+  background-color: #ec8f6c
+  border: #256868 solid 10px
+  border-radius: 3px
+
+.inputSlider
+  &::-webkit-slider-runnable-track
+    @include track
+  &::-moz-range-track
+    @include track
+  &::-ms-track
+    @include track
+
+  &::-webkit-slider-thumb
+    @include cursor
+  &::-moz-range-thumb
+    @include cursor
+  &::-ms-thumb
+    @include cursor
+
+
+textarea
+  font-family: "VT323", monospace
+  color: #a9b08f
+  border: none
+  background: none
+
+input[type='text']
+  color: #a9b08f
+  border: none
+  background: none

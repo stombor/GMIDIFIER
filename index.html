@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GenomeMidifier</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/css/style.css">
+    <script src="voca.js"></script>
+    <script src="jsmidgen.js"></script>
+    <script src="download.js"></script>
+    <script src="tone.js"></script>
+    <script src="filesaver.js"></script>
+</head>
+<body>
+<div class="mainContainer">
+    <div class="textLarge">
+        <div>GENOME MIDIFIER</div>
+    </div>
+    <div class="horizontalContainer">
+        <div class="verticalContainer" style="width: 500px">
+            <div class=horizontalContainer>
+                <input class="button" type="button" id="presetButton" value="PRESET">
+                <div class="inputWindow" id="bpmInputWindow">
+                    <div class="inputTitle">BPM</div>
+                    <div class="inputSection">
+                        <input class="crt" type="text" id="bpm" name="stepLength" placeholder="120">
+                    </div>
+                </div>
+                <div class="inputWindow" id="durationInputWindow">
+                    <div class="inputTitle">NOTE DUR.</div>
+                    <div class="inputSection">
+                        <input class="crt" type="text" id="stepLength" name="stepLength" placeholder="128 (1/4 note)">
+                    </div>
+                </div>
+            </div>
+            <div class="inputWindow" id="geneInputWindow">
+                <div class="inputTitle">GENE</div>
+                <div class="inputSection">
+                    <textarea class="crt" name="genome" id="genome" rows="10"></textarea>
+                </div>
+            </div>
+            <div class=horizontalContainer>
+                <input class="button" type="button" id="visualize" value="VISUALIZE">
+                <input class="button" type="button" id="createMidi" value="MIDIFY">
+            </div>
+        </div>
+        <div class="verticalContainer" style="width: 660px">
+            <div class="inputWindow" id="chordNotesInputWindow">
+                <div class="inputTitle">NR OF NOTES</div>
+                <div class="inputSection">
+                    <div class=chordsContainer>
+                        <input class="qualityButton" type="button" value="CHORDS" id="chordsButton">
+                        <input type="range" class="inputSlider" id="chordAmount" name="chordAmount" min="2" max="12"
+                               step="1" value="2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="inputWindow" id="rootTransInputWindow">
+                <div class="inputTitle">ROOT TRANSPOSAL</div>
+                <div class="inputSection">
+                    <input type="range" id="transposeKey" class="inputSlider" name="transposeKey" min="0" max="12"
+                           step="1" value="0">
+                </div>
+            </div>
+            <div class="inputWindow" id="qualityInputWindow">
+                <div class="inputTitle">SCALE QUALITY</div>
+                <div class="inputSection">
+                    <div class="qualityFirstRow">
+                        <input class="qualityButton" type="button" id="dorianButton" value="DORIAN">
+                        <input class="qualityButton" type="button" id="lydianButton" value="LYDIAN">
+                        <input class="qualityButton" type="button" id="aeolianButton" value="AEOLIAN">
+                    </div>
+                    <div class="qualitySecondRow">
+                        <input class="qualityButton" type="button" id="ionianButton" value="IONIAN">
+                        <input class="qualityButton" type="button" id="phrygianButton" value="PHRYGIAN">
+                        <input class="qualityButton" type="button" id="mixolydianButton" value="MIXOLYDIAN">
+                        <input class="qualityButton" type="button" id="locrianButton" value="LOCRIAN">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="script.js">
+</script>
+<script>
+    document.getElementById("createMidi").addEventListener("click",createMidi);
+
+    document.getElementById("ionianButton").addEventListener("click",clickIonian);
+    document.getElementById("dorianButton").addEventListener("click",clickDorian);
+    document.getElementById("phrygianButton").addEventListener("click",clickPhyrigian);
+    document.getElementById("lydianButton").addEventListener("click",clickLydian);
+    document.getElementById("mixolydianButton").addEventListener("click",clickMixolydian);
+    document.getElementById("aeolianButton").addEventListener("click",clickAeolian);
+    document.getElementById("locrianButton").addEventListener("click",clickLocrian);
+
+    document.getElementById("chordsButton").addEventListener("click",clickChords);
+    document.getElementById("presetButton").addEventListener("click",clickPreset);
+
+    //document.getElementById("playGenome").addEventListener("click",playGenome);
+</script>
+</body>
+</html>
