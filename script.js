@@ -52,7 +52,7 @@ function createMidi(){
     let file = new jsMidi.File();
     let track = new jsMidi.Track();
     let bpm = parseInt(document.getElementById("bpm").value,10);
-    if(document.getElementById("bpm").value == '') stepLength=parseInt(v.slice(scale,0,3),4);
+    if(document.getElementById("bpm").value == '') bpm=parseInt(v.slice(scale,0,3),4);
     track.setTempo(parseInt(v.slice(scale,0,3),4));
     let singlenote = !areChords;
     let chordamount = parseInt(document.getElementById("chordAmount").value,10);
