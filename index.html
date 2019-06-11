@@ -8,18 +8,16 @@
     <script src="voca.js"></script>
     <script src="jsmidgen.js"></script>
     <script src="download.js"></script>
-    <script src="tone.js"></script>
-    <script src="filesaver.js"></script>
 </head>
 <body>
-<div class="mainContainer">
+<div class="mainContainer crt">
     <div class="textLarge">
         <div>GENOME MIDIFIER</div>
     </div>
     <div class="horizontalContainer">
         <div class="verticalContainer" style="width: 500px">
             <div class=horizontalContainer>
-                <input class="button" type="button" id="presetButton" value="PRESET">
+                <input class="button crt" type="button" id="presetButton" value="PRESET">
                 <div class="inputWindow" id="bpmInputWindow">
                     <div class="inputTitle">BPM</div>
                     <div class="inputSection">
@@ -40,8 +38,8 @@
                 </div>
             </div>
             <div class=horizontalContainer>
-                <input class="button" type="button" id="visualize" value="VISUALIZE">
-                <input class="button" type="button" id="createMidi" value="MIDIFY">
+                <input class="button crt" type="button" id="visualize" value="even more CRT">
+                <input class="button crt" type="button" id="createMidi" value="MIDIFY">
             </div>
         </div>
         <div class="verticalContainer" style="width: 660px">
@@ -49,7 +47,7 @@
                 <div class="inputTitle">NR OF NOTES</div>
                 <div class="inputSection">
                     <div class=chordsContainer>
-                        <input class="qualityButton" type="button" value="CHORDS" id="chordsButton">
+                        <input class="qualityButton crt" type="button" value="CHORDS" id="chordsButton">
                         <input type="range" class="inputSlider" id="chordAmount" name="chordAmount" min="2" max="12"
                                step="1" value="2">
 
@@ -67,15 +65,15 @@
                 <div class="inputTitle">SCALE QUALITY</div>
                 <div class="inputSection">
                     <div class="qualityFirstRow">
-                        <input class="qualityButton" type="button" id="dorianButton" value="DORIAN">
-                        <input class="qualityButton" type="button" id="lydianButton" value="LYDIAN">
-                        <input class="qualityButton" type="button" id="aeolianButton" value="AEOLIAN">
+                        <input class="qualityButton crt" type="button" id="dorianButton" value="DORIAN">
+                        <input class="qualityButton crt" type="button" id="lydianButton" value="LYDIAN">
+                        <input class="qualityButton crt" type="button" id="aeolianButton" value="AEOLIAN">
                     </div>
                     <div class="qualitySecondRow">
-                        <input class="qualityButton" type="button" id="ionianButton" value="IONIAN">
-                        <input class="qualityButton" type="button" id="phrygianButton" value="PHRYGIAN">
-                        <input class="qualityButton" type="button" id="mixolydianButton" value="MIXOLYDIAN">
-                        <input class="qualityButton" type="button" id="locrianButton" value="LOCRIAN">
+                        <input class="qualityButton crt" type="button" id="ionianButton" value="IONIAN">
+                        <input class="qualityButton crt" type="button" id="phrygianButton" value="PHRYGIAN">
+                        <input class="qualityButton crt" type="button" id="mixolydianButton" value="MIXOLYDIAN">
+                        <input class="qualityButton crt" type="button" id="locrianButton" value="LOCRIAN">
                     </div>
                 </div>
             </div>
@@ -100,7 +98,7 @@
     document.getElementById("chordsButton").addEventListener("click",clickChords);
     document.getElementById("presetButton").addEventListener("click",clickPreset);
 
-    //document.getElementById("playGenome").addEventListener("click",playGenome);
+    document.getElementById("visualize").addEventListener("click",clickCRT);
 </script>
 </body>
 </html>

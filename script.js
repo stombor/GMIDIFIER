@@ -53,15 +53,12 @@ function createMidi(){
     let file = new jsMidi.File();
     let track = new jsMidi.Track();
     let bpm = parseInt(document.getElementById("bpm").value,10);
-    if(document.getElementById("bpm").value == '') bpm=parseInt(v.slice(scale,0,3),4);
-    track.setTempo(parseInt(v.slice(scale,0,3),4));
-    let singlenote = !window-areChords;
+    if(document.getElementById("bpm").value === '') bpm=parseInt(v.slice(scale,0,3),4);
+    track.setTempo(bpm);
+    let singlenote = !window.areChords;
     let chordamount = parseInt(document.getElementById("chordAmount").value,10);
     let stepLength = parseInt(document.getElementById("stepLength").value,10);
-    if(document.getElementById("stepLength").value == '') stepLength=128;
-
-
-
+    if(document.getElementById("stepLength").value === '') stepLength=128;
     if(singlenote){
         for(let i = 0; i < notes.length; i++){
             let sign = Math.sign(parseInt(v.slice(notes[i],4,5),4)-2);
@@ -479,6 +476,19 @@ function clickPreset(){
         if(document.getElementById("chordsButton").classList.contains('active')) document.getElementById("chordsButton").classList.remove('active');
         window.preset = false;
     }
-
+}
+function clickCRT(){
+        let crts= document.getElementsByClassName("crt");
+        for(let i = 0; i < crts.length;i++){
+            activateCRT(crts.item(i))
+        }
 
 }
+function activateCRT(item){
+    if(item.classList.contains('animated')){
+        item.classList.remove('animated');
+    }else{
+        item.classList.add('animated');
+    }
+}
+
